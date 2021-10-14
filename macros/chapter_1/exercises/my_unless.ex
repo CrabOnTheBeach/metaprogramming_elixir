@@ -1,4 +1,7 @@
 defmodule MyUnless do
+  @doc """
+  Exercise is: write your own unless macro without using `if`
+  """
   defmacro unless(expression, do: block) do
     quote do
       case unquote(expression) do
