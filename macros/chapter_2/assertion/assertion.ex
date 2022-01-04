@@ -36,4 +36,9 @@ defmodule Assertion do
       Assertion.Test.assert(operator, left, right)
     end
   end
+  defmacro assert(primitive) do
+    quote bind_quoted: [primitive: primitive] do
+      Assertion.Test.assert(primitive)
+    end
+  end
 end

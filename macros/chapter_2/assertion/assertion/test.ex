@@ -25,11 +25,13 @@ defmodule Assertion.Test do
   def assert(operation, left, right) when operation in @operations do
     {:fail, error_message(operation, left, right)}
   end
+  def assert(true), do: :ok
+  def assert(false), do: {:fail, "Asserted false"}
 
   defp error_message(operation, left, right) when operation in @operations do
     """
     Expecter left: #{inspect(left)}
-    To be #{inspect(relationship(operation))} right: #{inspect(right)}
+    To be #{relationship(operation)} right: #{inspect(right)}
     """
   end
   defp error_message(operation, _, _) do

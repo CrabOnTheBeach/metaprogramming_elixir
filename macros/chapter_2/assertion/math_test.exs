@@ -15,4 +15,12 @@ defmodule MathTest do
     assert 5 == 0
     assert 5 == 5
   end
+
+  test "Primimtive test succeeds" do
+    assert true
+  end
+
+  test "Primitive test fails" do
+    assert false
+  end
 end
